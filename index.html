@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SIREBAN - Panel Operador</title>
+  <style>
+    /* Paleta Oficial */
+    :root {
+      --verde-oscuro: #1C6F41;
+      --verde-base: #24800D;
+      --verde-claro: #62B726;
+      --verde-brillante: #77C932;
+      --amarillo-acento: #F2A922;
+      --gris-claro: #E5E5E5;
+      --gris-medio: #DCDDDC;
+      --blanco: #ffffff;
+      --negro: #000000;
+    }
+
+    body {
+      font-family: "Ubuntu", Arial, sans-serif;
+      margin: 0;
+      background: var(--gris-claro);
+    }
+
+    header {
+      background: var(--verde-oscuro);
+      color: var(--blanco);
+      padding: 15px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    header img {
+      height: 40px;
+      margin-right: 10px;
+    }
+
+    header h1 {
+      font-size: 1.4rem;
+      margin: 0;
+    }
+
+    main {
+      padding: 20px;
+    }
+
+    h2 {
+      text-align: center;
+      color: var(--verde-oscuro);
+    }
+
+    .menu {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 20px;
+      margin-top: 20px;
+    }
+
+    .btn-card {
+      background: var(--blanco);
+      border-radius: 12px;
+      padding: 20px;
+      text-align: center;
+      box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+      transition: transform 0.3s ease, background 0.3s ease;
+      cursor: pointer;
+      border: 2px solid var(--gris-medio);
+    }
+
+    .btn-card:hover {
+      transform: scale(1.05);
+      background: var(--verde-brillante);
+      color: var(--blanco);
+    }
+
+    .btn-card h3 {
+      margin: 0;
+      font-size: 1.2rem;
+      color: var(--verde-oscuro);
+    }
+
+    .btn-card p {
+      margin-top: 5px;
+      font-size: 0.9rem;
+      color: #333;
+    }
+
+    footer {
+      background: var(--verde-oscuro);
+      color: var(--blanco);
+      text-align: center;
+      padding: 10px;
+      margin-top: 20px;
+    }
+
+    /* Estilos para tablas */
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 20px;
+      background: var(--blanco);
+      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+    }
+
+    table th, table td {
+      padding: 10px;
+      text-align: left;
+      border: 1px solid var(--gris-medio);
+    }
+
+    table th {
+      background: var(--verde-oscuro);
+      color: var(--blanco);
+    }
+
+    .hidden {
+      display: none;
+    }
+
+    .export-btn {
+      background: var(--amarillo-acento);
+      color: var(--negro);
+      padding: 8px 16px;
+      margin: 10px 0;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+      font-weight: bold;
+      transition: background 0.3s;
+    }
+
+    .export-btn:hover {
+      background: var(--verde-base);
+      color: var(--blanco);
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div style="display: flex; align-items: center;">
+      <img src="logo_sireban.png" alt="Logo SIREBAN">
+      <h1>SIREBAN - Finca Las Lilias</h1>
+    </div>
+    <div>👤 Operador</div>
+  </header>
+
+  <main>
+    <h2>Panel de Operador</h2>
+    <div class="menu">
+      <div class="btn-card" onclick="mostrar('plagas')">
+        <h3>📋 Ver Plagas</h3>
+        <p>Historial de detección</p>
+      </div>
+      <div class="btn-card" onclick="mostrar('tratamientos')">
+        <h3>💊 Ver Tratamientos</h3>
+        <p>Aplicaciones realizadas</p>
+      </div>
+      <div class="btn-card" onclick="mostrar('mezclas')">
+        <h3>⚗️ Ver Mezclas</h3>
+        <p>Catálogo químico</p>
+      </div>
+      <div class="btn-card" onclick="mostrar('productos')">
+        <h3>📦 Ver Productos</h3>
+        <p>Inventario de insumos</p>
+      </div>
+    </div>
+
+    <!-- Tablas -->
+    <section id="plagas" class="hidden">
+      <h2>📋 Registros de Plagas</h2>
+      <button class="export-btn">Exportar a Excel</button>
+      <table>
+        <tr>
+          <th>No. Reporte</th>
+          <th>Fecha Detectada</th>
+          <th>Plaga (Común)</th>
+          <th>Nivel Afectación</th>
+          <th>Semana</th>
+          <th>Responsable</th>
+        </tr>
+        <tr>
+          <td>001</td><td>2025-09-10</td><td>Sigatoka Negra</td><td>Alto</td><td>36</td><td>Juan Pérez</td>
+        </tr>
+      </table>
+    </section>
+
+    <section id="tratamientos" class="hidden">
+      <h2>💊 Registros de Tratamientos</h2>
+      <button class="export-btn">Exportar a Excel</button>
+      <table>
+        <tr>
+          <th>ID Tratamiento</th>
+          <th>Fecha Aplicación</th>
+          <th>Tipo</th>
+          <th>Producto Usado</th>
+          <th>Reporte Plaga</th>
+          <th>Responsable</th>
+          <th>Costo Total</th>
+        </tr>
+        <tr>
+          <td>101</td><td>2025-09-15</td><td>Manual</td><td>Mancozeb</td><td>001</td><td>Carlos Gómez</td><td>$1500</td>
+        </tr>
+      </table>
+    </section>
+
+    <section id="mezclas" class="hidden">
+      <h2>⚗️ Catálogo de Mezclas</h2>
+      <button class="export-btn">Exportar a Excel</button>
+      <table>
+        <tr>
+          <th>ID Mezcla</th>
+          <th>Nombre de Mezcla</th>
+          <th>Dosis Sugerida</th>
+        </tr>
+        <tr>
+          <td>MZ-01</td><td>Mezcla Fungicida</td><td>200 ml / 100 L agua</td>
+        </tr>
+      </table>
+    </section>
+
+    <section id="productos" class="hidden">
+      <h2>📦 Catálogo de Productos</h2>
+      <button class="export-btn">Exportar a Excel</button>
+      <table>
+        <tr>
+          <th>ID Producto</th>
+          <th>Nombre</th>
+          <th>Tipo</th>
+          <th>Plaga Objetivo</th>
+          <th>Unidad de Medida</th>
+          <th>Precio Unitario</th>
+        </tr>
+        <tr>
+          <td>P-001</td><td>Oppus</td><td>Fungicida</td><td>Sigatoka Negra</td><td>Litro</td><td>$450</td>
+        </tr>
+      </table>
+    </section>
+  </main>
+
+  <footer>
+    © 2025 SIREBAN - Finca Las Lilias
+  </footer>
+
+  <script>
+    function mostrar(seccion) {
+      document.querySelectorAll("section").forEach(s => s.classList.add("hidden"));
+      document.getElementById(seccion).classList.remove("hidden");
+    }
+  </script>
+</body>
+</html>

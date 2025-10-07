@@ -1,0 +1,137 @@
+/* ====== RESET ====== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Ubuntu", sans-serif;
+}
+
+/* ====== BODY ====== */
+body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+
+    /* Fondo degradado con la paleta de verdes */
+    background: linear-gradient(135deg, #1C6F41, #24800D, #62B726);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+}
+
+/* ====== CONTENEDOR ====== */
+section {
+    position: relative;
+    max-width: 400px;
+    background-color: rgba(28, 111, 65, 0.9); /* Verde principal con transparencia */
+    border: 2px solid #DCDDDC;
+    border-radius: 20px;
+    backdrop-filter: blur(6px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 2rem 3rem;
+    box-shadow: 0 0 25px rgba(0, 0, 0, 0.5);
+}
+
+/* ====== TITULOS ====== */
+h1 {
+    font-size: 2rem;
+    color: #E5E5E5;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+/* ====== INPUTS ====== */
+.inputbox {
+    position: relative;
+    margin: 30px 0;
+    max-width: 310px;
+    border-bottom: 2px solid #E5E5E5;
+}
+
+.inputbox input {
+    width: 100%;
+    height: 60px;
+    background: transparent;
+    border: none;
+    outline: none;
+    font-size: 1rem;
+    padding: 0 35px 0 5px;
+    color: #fff;
+}
+
+.inputbox label {
+    position: absolute;
+    top: 50%;
+    left: 5px;
+    transform: translateY(-50%);
+    color: #DCDDDC;
+    font-size: 1rem;
+    pointer-events: none;
+    transition: all 0.3s ease-in-out;
+}
+
+input:focus ~ label,
+input:valid ~ label {
+    top: -5px;
+    font-size: 0.75rem;
+    color: #77C932; /* Verde brillante al escribir */
+}
+
+.inputbox ion-icon {
+    position: absolute;
+    right: 8px;
+    color: #E5E5E5;
+    font-size: 1.2rem;
+    top: 20px;
+}
+
+/* ====== OPCIONES EXTRAS ====== */
+.forget {
+    margin: 25px 0;
+    font-size: 0.85rem;
+    color: #E5E5E5;
+    display: flex;
+    justify-content: space-between;
+}
+
+.forget label {
+    display: flex;
+    align-items: center;
+}
+
+.forget label input {
+    margin-right: 3px;
+}
+
+.forget a {
+    color: #F2A922; /* Amarillo acento */
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.forget a:hover {
+    color: #FFC107;
+}
+
+/* ====== BOTÓN ====== */
+button {
+    width: 100%;
+    height: 45px;
+    border-radius: 40px;
+    background: #28A745; /* Verde corporativo */
+    border: none;
+    outline: none;
+    cursor: pointer;
+    font-size: 1rem;
+    font-weight: 600;
+    color: #fff;
+    transition: all 0.3s ease-in-out;
+}
+
+button:hover {
+    background: #F2A922; /* Amarillo acento al pasar */
+    color: #333;
+}
